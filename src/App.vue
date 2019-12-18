@@ -8,6 +8,9 @@
         <!-- v-on directive that will process a custom event called onEnter (emitted by child component), if this event
         occurs, the parent will call the method changeTitle -->
         <list-title v-on:onEnter="changeTitle"></list-title> <!--use a specific tag which is your component name in kebab-case (list-title) -->
+        <Item></Item>
+        <AddItem @enter-btn="sum"></AddItem>
+        <p> ceci est un message d'utilité publique : {{ item }} </p>
       </div>
     </div>
   </div>
@@ -16,22 +19,30 @@
 <script>
 /*import the file containing the component definition */
 import ListTitle from "./components/ListTitle.vue";
+import Item from "./components/Item.vue";
+import AddItem from "./components/AddItem.vue";
 
 export default {
   name: "app",
   components: {
     /* "Declare" the component in the js of the parent*/
-    ListTitle
+    ListTitle,
+    Item,
+    AddItem,
   },
   data() {
     return {
-      title: 'MyVueJS Todo List' /* variable containing the title of the page */
-    };
+      title: 'MyVueJS todo List', /* variable containing the title of the page */
+      item: 'test',
+    }
   },
   methods: {
-    /* the method changeTitle, will chaange the title of the page when the onEnter event occurs */
+    /* the method changeTitle, will change the title of the page when the onEnter event occurs */
     changeTitle(text){
       this.title = text;
+    },
+    sum(text) {
+      this.item = text;
     }
   },
 };
