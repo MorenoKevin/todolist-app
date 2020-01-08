@@ -1,7 +1,9 @@
 <template>
-<div>
-  <input id="listItem" v-model="item" v-on: @keyup.enter="Validate" placeholder="add list item"/>
-  <button @click="Validate" v-on:click="count++">Vous avez cliqué {{ count }} fois.</button>
+<div class="input-group mb-3">
+  <input type="text" class="form-control" id="listItem" v-model="item" placeholder="add list item"/>
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" type="button" @click="Validate">Add!</button>
+  </div>
 </div>
 </template>
 

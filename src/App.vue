@@ -5,12 +5,12 @@
                                     here you use the title coming from the data section of this component (App.vue) -->
       <div class="footer">
         <hr />
+                <AddItem @enter-btn="sum"></AddItem>
+                        <Item></Item>
         <!-- v-on directive that will process a custom event called onEnter (emitted by child component), if this event
         occurs, the parent will call the method changeTitle -->
         <list-title v-on:onEnter="changeTitle"></list-title> <!--use a specific tag which is your component name in kebab-case (list-title) -->
-        <Item></Item>
-        <AddItem @enter-btn="sum"></AddItem>
-        <p> ceci est un message d'utilité publique : {{ item }} </p>
+        <p> ceci est un message d'utilité publique :  </p>
       </div>
     </div>
   </div>
