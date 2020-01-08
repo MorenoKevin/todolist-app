@@ -22,12 +22,17 @@ export default {
         id: 1, 
         text: "oui", 
         isChecked: false 
+      },
+      {
+        id: 2, 
+        text: "peut-être", 
+        isChecked: false 
       }]
     }
   },
   methods: {
     addItem(itemText){
-      this.items.push({
+      this.todoitems.push({
         id: uuidv1(), 
         text: itemText, 
         isChecked: false 

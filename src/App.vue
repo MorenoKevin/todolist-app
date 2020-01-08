@@ -5,7 +5,7 @@
                                     here you use the title coming from the data section of this component (App.vue) -->
       <div class="footer">
         <hr />
-          <AddItem v-on:clickBtn="addItem"></AddItem>
+          <AddItem v-on:clickBtn="addItemToList"></AddItem>
           <Items ref="lesItems"></Items>
         <!-- v-on directive that will process a custom event called onEnter (emitted by child component), if this event
         occurs, the parent will call the method changeTitle -->
@@ -42,7 +42,7 @@ export default {
       this.title = text;
     },
     addItemToList(itemText){
-      this.$refs.lesItems.addItem(itemText)
+      this.$refs.lesItems.addItem(itemText);
     }
   },
 };

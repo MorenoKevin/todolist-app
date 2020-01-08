@@ -1,6 +1,6 @@
 <template>
 <div>
-  <label v-bind:class="{'striked' : singleItem.isChecked}"><input type="checkbox" v-model="singleItem.isChecked">{{singleItem.text}}</label>
+  <label v-bind:class="{'striked' : singleItem.isChecked}"><input type="checkbox" v-model="singleItem.isChecked">{{ " "+ singleItem.text}}</label>
 </div>
 </template>
 
