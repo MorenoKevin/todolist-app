@@ -1,14 +1,13 @@
 <template>
   <div>
     <ul>
-      <Item>
-
-      </Item>
+      <Item v-for="item in todoitems" v-bind:key="item.id" v-bind:singleItem="item"> </Item>    
     </ul>
   </div>
 </template>
 
 <script>
+const uuidv1 = require('uuid/v1');
 import Item from "./Item.vue";
 
 export default {
@@ -16,6 +15,24 @@ export default {
   components: {
     /* "Declare" the component in the js of the parent*/
     Item,
+  },
+  data() {
+    return {
+      todoitems: [{
+        id: 1, 
+        text: "oui", 
+        isChecked: false 
+      }]
+    }
+  },
+  methods: {
+    addItem(itemText){
+      this.items.push({
+        id: uuidv1(), 
+        text: itemText, 
+        isChecked: false 
+        });
+    }
   }
 }
 </script>
