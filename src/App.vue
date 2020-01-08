@@ -5,8 +5,9 @@
                                     here you use the title coming from the data section of this component (App.vue) -->
       <div class="footer">
         <hr />
-          <AddItem></AddItem>
-          <Items></Items>
+          <AddItem v-on:clickBtn="Validate"></AddItem>
+          <Items>{{todolist}}</Items>
+          {{todolist}}
         <!-- v-on directive that will process a custom event called onEnter (emitted by child component), if this event
         occurs, the parent will call the method changeTitle -->
         <list-title v-on:onEnter="changeTitle"></list-title> <!--use a specific tag which is your component name in kebab-case (list-title) -->
@@ -31,6 +32,7 @@ export default {
   },
   data() {
     return {
+      todolist: new Array(),
       title: 'MyVueJS todo List', /* variable containing the title of the page */
     }
   },
@@ -39,9 +41,9 @@ export default {
     changeTitle(text){
       this.title = text;
     },
-    sum(text) {
-      this.item = text;
-    }
+    Validate(text){
+      this.todolist = text;
+    },
   },
 };
 </script>

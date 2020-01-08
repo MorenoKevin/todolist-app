@@ -1,8 +1,6 @@
 <template>
 <div>
-  <AddItem></AddItem>
-  <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
-    <label for="mike">yolo</label>
+  <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">{{name}}
 </div>
 </template>
 
@@ -11,8 +9,13 @@ export default {
   name: "item",
   components: {
     /* "Declare" the component in the js of the parent*/
-    //AddItem,
   },
+  data() {
+    return {
+      name: ".",
+    }
+
+  }
 };
 </script>
 
