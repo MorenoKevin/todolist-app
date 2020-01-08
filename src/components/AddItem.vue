@@ -11,13 +11,7 @@
 export default {
   name: "AddItem",
   props: ['item'],
-  data() {
-    return {
-      count: 0,
-    }
-  },
   methods: {
-
     Validate() {
       this.$emit('enter-btn', this.item);
       this.item = "";
